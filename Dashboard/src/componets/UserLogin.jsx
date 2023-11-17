@@ -23,15 +23,15 @@ const UserLogin = () => {
       if (response.ok) {
         const data = await response.json();
         console.log('Login successful. User ID:', data.userId);
-        // You might want to redirect the user or perform other actions after successful login.
+        
         navigate('/details')
       } else {
         console.error('Login failed:', response.status);
-        // Handle failed login, show error message, etc.
+       
       }
     } catch (error) {
       console.error('Error during login:', error.message);
-      // Handle the error, show error message, etc.
+      
     }
   };
 
