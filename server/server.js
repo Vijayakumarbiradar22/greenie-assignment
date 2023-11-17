@@ -10,14 +10,14 @@ app.use(cors());
 app.use(bodyParser.json());
 mongoose.set('strictQuery', false);
 
-// MongoDB Connection
+// Here I did MongoDB Connection
 mongoose.connect('mongodb+srv://vijaya20cs104:J0o6VoWWIH7hVVlq@cluster0.8cp6smf.mongodb.net/', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
  
 });
 
-// Define a User Schema
+// The following is for User Schema
 const userSchema = new mongoose.Schema({
   username: String,
   email: String,
@@ -33,7 +33,7 @@ app.post('/register', async (req, res) => {
   try {
     const { username, email, phone, password, userId } = req.body;
 
-    // Save user data to the database
+    // To Save user data to the database
     const user = new User({ username, email, phone, password, userId });
     await user.save();
 
@@ -44,7 +44,7 @@ app.post('/register', async (req, res) => {
   }
 });
 
-// Login Endpoint
+// Login 
 app.post('/login', async (req, res) => {
   try {
     const { username, password } = req.body;
