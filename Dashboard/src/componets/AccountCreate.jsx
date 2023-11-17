@@ -1,4 +1,3 @@
-// AccountCreate.js
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  { Container,Row,Col } from 'react-bootstrap';
@@ -24,7 +23,7 @@ const AccountCreate = () => {
   const handleRegistration = async (e) => {
     e.preventDefault();
 
-    // Generate a unique 8-character user ID
+    
     generateUserId();
 
     try {
@@ -48,10 +47,10 @@ const AccountCreate = () => {
 
       const responseData = await response.json();
 
-      // Update the state with the actual user ID from the response
+      
       setUserId(responseData.userId);
 
-      // Handle successful registration (optional)
+      
       console.log('User registered successfully with ID:', responseData.userId);
     } catch (error) {
       console.error('Error during registration:', error.message);
